@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.thermo.com/informatics/xmlns/limswebservice" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.thermo.com/informatics/xmlns/limswebservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.thermo.com/informatics/xmlns/limswebservice/Imports">
+      <xsd:import namespace="http://www.thermo.com/informatics/xmlns/limswebservice" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ILIMSWebService_Process_InputMessage">
+    <wsdl:part name="parameters" element="tns:Process" />
+  </wsdl:message>
+  <wsdl:message name="ILIMSWebService_Process_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILIMSWebService_CheckAuth_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckAuth" />
+  </wsdl:message>
+  <wsdl:message name="ILIMSWebService_CheckAuth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILIMSWebService_GetAllLogFiles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLogFiles" />
+  </wsdl:message>
+  <wsdl:message name="ILIMSWebService_GetAllLogFiles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLogFilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILIMSWebService_EraseAllLogFiles_InputMessage">
+    <wsdl:part name="parameters" element="tns:EraseAllLogFiles" />
+  </wsdl:message>
+  <wsdl:message name="ILIMSWebService_EraseAllLogFiles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EraseAllLogFilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILIMSWebService_GetSingleLogFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSingleLogFile" />
+  </wsdl:message>
+  <wsdl:message name="ILIMSWebService_GetSingleLogFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSingleLogFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILIMSWebService_LogSOAPMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogSOAPMessages" />
+  </wsdl:message>
+  <wsdl:message name="ILIMSWebService_LogSOAPMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogSOAPMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILIMSWebService_ViewLogStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewLogStatus" />
+  </wsdl:message>
+  <wsdl:message name="ILIMSWebService_ViewLogStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewLogStatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ILIMSWebService">
+    <wsdl:operation name="Process">
+      <wsdl:input wsaw:Action="http://www.thermo.com/informatics/xmlns/limswebservice/Process" message="tns:ILIMSWebService_Process_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.thermo.com/informatics/xmlns/limswebservice/ILIMSWebService/ProcessResponse" message="tns:ILIMSWebService_Process_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckAuth">
+      <wsdl:input wsaw:Action="http://www.thermo.com/informatics/xmlns/limswebservice/CheckAuth" message="tns:ILIMSWebService_CheckAuth_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.thermo.com/informatics/xmlns/limswebservice/ILIMSWebService/CheckAuthResponse" message="tns:ILIMSWebService_CheckAuth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLogFiles">
+      <wsdl:input wsaw:Action="http://www.thermo.com/informatics/xmlns/limswebservice/GetAllLogFiles" message="tns:ILIMSWebService_GetAllLogFiles_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.thermo.com/informatics/xmlns/limswebservice/ILIMSWebService/GetAllLogFilesResponse" message="tns:ILIMSWebService_GetAllLogFiles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EraseAllLogFiles">
+      <wsdl:input wsaw:Action="http://www.thermo.com/informatics/xmlns/limswebservice/EraseAllLogFiles" message="tns:ILIMSWebService_EraseAllLogFiles_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.thermo.com/informatics/xmlns/limswebservice/ILIMSWebService/EraseAllLogFilesResponse" message="tns:ILIMSWebService_EraseAllLogFiles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSingleLogFile">
+      <wsdl:input wsaw:Action="http://www.thermo.com/informatics/xmlns/limswebservice/GetSingleLogFile" message="tns:ILIMSWebService_GetSingleLogFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.thermo.com/informatics/xmlns/limswebservice/ILIMSWebService/GetSingleLogFileResponse" message="tns:ILIMSWebService_GetSingleLogFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogSOAPMessages">
+      <wsdl:input wsaw:Action="http://www.thermo.com/informatics/xmlns/limswebservice/LogSOAPMessages" message="tns:ILIMSWebService_LogSOAPMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.thermo.com/informatics/xmlns/limswebservice/ILIMSWebService/LogSOAPMessagesResponse" message="tns:ILIMSWebService_LogSOAPMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewLogStatus">
+      <wsdl:input wsaw:Action="http://www.thermo.com/informatics/xmlns/limswebservice/ViewLogStatus" message="tns:ILIMSWebService_ViewLogStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.thermo.com/informatics/xmlns/limswebservice/ILIMSWebService/ViewLogStatusResponse" message="tns:ILIMSWebService_ViewLogStatus_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
